@@ -21,4 +21,4 @@ export default function App() {
     </NavigationContainer>
   );
 }
-// Componente reutilizável para o manequim
+

@@ -9,7 +9,6 @@ export default function Tela1({ navigation }) {
   const height = 200 + 40 * heightMultiplier;
 
   const continuar = () => {
-    // Navegue para a próxima tela e passe os dados como parâmetros
     navigation.navigate('Tela2', { height });
   };
 
