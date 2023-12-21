@@ -1,23 +1,40 @@
+import React, { useState, useEffect } from 'react';
+import { Image, StyleSheet, View } from 'react-native';
+import ColorPicker from 'react-native-wheel-color-picker';
+import MaskedView from '@react-native-masked-view/masked-view';
+import { Button, TouchableHighlight } from 'react-native';
+import { Text } from 'react-native';
+
 const clothingOptions = [
-    { id: 1, source: require('./assets/img1.png') },
-    { id: 2, source: require('./assets/img2.png') },
-    { id: 3, source: require('./assets/img3.png') },
-    { id: 4, source: require('./assets/img4.png') },
+    { id: 1, source: require('../assets/img1.png') },
+    { id: 2, source: require('../assets/img2.png') },
+    { id: 3, source: require('../assets/img3.png') },
+    { id: 4, source: require('../assets/img4.png') },
 ];
 
-export default function Tela2() {
+export default function Tela2({ route, navigation }) {
     const [color, setColor] = useState('#c0c0c0');
+    const [nomeCor, setNomeCor] = useState('');
     const [selectedOption, setSelectedOption] = useState(clothingOptions[0]);
 
-    const onColorChange = color => {
+    const { height } = route.params
+
+
+
+    const onColorChange = async color => {
         setColor(color);
+        const cor = await (await fetch(`https://www.thecolorapi.com/id?hex=${color.replace('#', '').toUpperCase()}`)).json();
+
+        setNomeCor(cor.name.value);
     };
 
-    useEffect(() => {
-    }, [selectedOption]);
+    const continuar = () => {
+        navigation.navigate('Tela3', { height, color, selectedOption });
+      };
 
     return (
         <View style={{ flex: 1 }}>
+            <Text>Nome da cor: {nomeCor}</Text>
             <View style={{ flex: 1 }}>
                 <ColorPicker
                     color={color}
@@ -34,7 +51,7 @@ export default function Tela2() {
                     maskElement={
                         <Image
                             source={selectedOption.source}
-                            style={{ flex: 1, aspectRatio: 0.65263157894737 }}
+                            style={{ flex: 1, aspectRatio: 0.65263157894737, alignSelf: 'center' }}
                             resizeMode='cover'
                         />
                     }
@@ -58,7 +75,7 @@ export default function Tela2() {
                     </TouchableHighlight>
                 ))}
             </View>
-            <Button style={{ flex: 1 }} title='Continuar' />
+            <Button style={{ flex: 1 }} title='Continuar' onPress={continuar} />
         </View>
     );
 }

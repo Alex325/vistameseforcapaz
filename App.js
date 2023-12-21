@@ -1,18 +1,22 @@
-import Slider from '@react-native-community/slider';
-import MaskedView from '@react-native-masked-view/masked-view';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect, useState } from 'react';
-import { ImageBackground } from 'react-native';
-import { TouchableHighlight } from 'react-native';
-import { Button } from 'react-native';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import ColorPicker from 'react-native-wheel-color-picker';
+import React, { useState, useEffect } from 'react';
+
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Tela1 from './components/Tela1';
+import Tela2 from './components/Tela2';
+import Tela3 from './components/Tela3';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  
   return (
-    <View style={{ flex: 1 }}>
-      
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Tela1">
+        <Stack.Screen name="Tela1" component={Tela1} />
+        <Stack.Screen name="Tela2" component={Tela2} />
+        <Stack.Screen name="Tela3" component={Tela3} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+// Componente reutilizável para o manequim
