@@ -9,10 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~49.0.15",
+    "@react-native-community/slider": "^4.5.0",
+    "expo": "^49.0.21",
+    "expo-cli": "^6.3.10",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
-    "react-native": "0.72.6"
+    "react-native": "0.72.6",
+    "react-native-reanimated": "~3.3.0",
+    "react-native-vertical-slider": "^1.0.1",
+    "rn-vertical-slider": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
