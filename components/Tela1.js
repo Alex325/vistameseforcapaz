@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, Image, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+export default function Tela1() {
   const [heightMultiplier, setHeightMultiplier] = useState(0);
   const height = 200 + 40 * heightMultiplier;
   return (
