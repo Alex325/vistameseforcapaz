@@ -2,7 +2,6 @@ import Slider from '@react-native-community/slider';
 import MaskedView from '@react-native-masked-view/masked-view';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { ImageBackground } from 'react-native';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import ColorPicker from 'react-native-wheel-color-picker';
 
@@ -31,7 +30,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-
+  imagemView: {
+    flexGrow: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
   },
 });
