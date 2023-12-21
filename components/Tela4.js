@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import ColorPicker from 'react-native-wheel-color-picker';
 import MaskedView from '@react-native-masked-view/masked-view';
 import { Button, TouchableHighlight } from 'react-native';
@@ -16,33 +16,22 @@ const clothingOptions = [
     { id: 4, source: require('../assets/img4.png') },
 ];
 
-const Tela3 = ({ route, navigation }) => {
-    const { height, color, selectedOption } = route.params;
-    const [nome, setNome] = useState('');
+const Tela4 = ({ route, navigation }) => {
+    const { nome, height, color, selectedOption } = route.params;
 
     useEffect(() => {
     }, [selectedOption]);
 
-    const salvarPersonagem = async () => {
-        
-
-        try {
-            const personagem = { nome, height, color, selectedOption };
-            await AsyncStorage.setItem('personagem', JSON.stringify(personagem));
-            navigation.navigate('Tela4', personagem)
-        } catch (error) {
-
-        }
-    };
+    const voltar = () => {
+        navigation.navigate('Tela1', {});
+    }
 
     return (
         <View style={{ flex: 1 }}>
 
-            <TextInput
-                style={{backgroundColor: 'grey', borderRadius: 10, zIndex: 10}}
-                onChangeText={setNome}
-                value={nome}
-            />
+            <Text
+                style={{ backgroundColor: 'grey', alignSelf: 'center', fontSize: 30 }}
+            >{nome}</Text>
 
             <View style={{ flex: 1, marginBottom: 100 }}>
                 <Manequim height={height} />
@@ -68,17 +57,9 @@ const Tela3 = ({ route, navigation }) => {
                 </MaskedView>
             </View>
 
-            <Button style={{ flex: 1 }} title='Salvar' onPress={salvarPersonagem} />
+            <Button style={{ flex: 1 }} title='Voltar' onPress={voltar} />
         </View>
     );
 };
 
-const styles = StyleSheet.create({
-    imagemView: {
-        flexGrow: 1,
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-    },
-});
-
-export default Tela3;
+export default Tela4;

@@ -24,7 +24,6 @@ export default function Tela2({ route, navigation }) {
     const onColorChange = async color => {
         setColor(color);
         const cor = await (await fetch(`https://www.thecolorapi.com/id?hex=${color.replace('#', '').toUpperCase()}`)).json();
-
         setNomeCor(cor.name.value);
     };
 

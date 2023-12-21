@@ -1,7 +1,0 @@
-tela 1: nesta tela, haverá uma espécie de avatar. aqui, a(o) usuária(o) poderá alterar a altura do boneco digital, rolando uma barra para cima ou para baixo.
-
-
-tela 2: nesta tela, haverá alguns tipos de roupa, como camisas e vestidos. caberá à(ao) usuária escolher as roupas, uma a uma, se assim desejar e definir a cor de cada vestimenta em meio a um espectro. nossa API é voltada para uma paleta de cores; sempre que uma delas é escolhida, seu nome aparece na tela e a roupa personalizada fica salva para ser utilizada na próxima tela.
-
-
-tela 3: nesta tela, haverá a opção de vestir o avatar com as roupas personalizadas previamente. o boneco vestido com a roupa é o que será salvo no celular.
