@@ -28,11 +28,3 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  imagemView: {
-    flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-});
